@@ -18,13 +18,12 @@ Esta aplicación es una solución integral para la gestión de inventarios de pr
 - **CI/CD**: Google Cloud Build (Despliegue automático).
 - **Frontend**: HTML5, CSS3, JavaScript Vanilla.
 
-☁️ Servicios Cloud Implementados Cloud Run: Hosting del contenedor de la API con escalabilidad automática.
+## ☁️ Servicios Cloud Implementados 
+- **Cloud Run**: Hosting del contenedor de la API con escalabilidad automática.
+- **Cloud SQL**: Instancia administrada de base de datos PostgreSQL.
+- **Artifact Registry**: Almacenamiento privado de imágenes de Docker.
+- **Cloud Build**: Pipeline para integración y despliegue continuo (CI/CD).
 
-Cloud SQL: Instancia administrada de base de datos PostgreSQL.
-
-Artifact Registry: Almacenamiento privado de imágenes de Docker.
-
-Cloud Build: Pipeline para integración y despliegue continuo (CI/CD).
 ## Verificar instalación de Java y Maven
 Ejecuta los siguientes códigos para validar la versiones instaladas
 ```markdown
