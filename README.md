@@ -13,4 +13,7 @@ Configura:
 - Language: Java
 - Spring Boot: última versión estable
 - Dependencias: Spring Web, Spring Data JPA, PostgreSQL Driver
+- Haz clic en GENERATE, se descargará un .zip
+- Extrae el contenido en tu carpeta de trabajo
+- Abre esa carpeta en Visual Studio Code.
 
