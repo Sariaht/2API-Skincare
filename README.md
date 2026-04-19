@@ -24,6 +24,10 @@ Esta aplicación es una solución integral para la gestión de inventarios de pr
 - **Artifact Registry**: Almacenamiento privado de imágenes de Docker.
 - **Cloud Build**: Pipeline para integración y despliegue continuo (CI/CD).
 
+1. Fase de creación y pruebas
+
+El proyecto se creará y ejecutará inicialmente de forma local
+
 ## Verificar instalación de Java y Maven
 Ejecuta los siguientes códigos para validar la versiones instaladas
 ```markdown
