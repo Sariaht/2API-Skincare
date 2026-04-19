@@ -52,4 +52,55 @@ Configura:
 Dirígete a visual studio code, y abre la carpeta maven que fue generada encontrarás diferentes archivos como se muestra a continuación:
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/4ac848b3-7cba-4c1a-a971-478c71007df8" />
 
-### Crear base de datos Postgress
+### Preparar entorno PostgreSQL
+- **Crear base de datos**:
+- ```markdown
+> Consola PostgreSQL
+CREATE DATABASE skincare_db;
+> ```
+- **Script tablas**:
+- ```markdown
+> Consola PostgreSQL
+CREATE TABLE categorias (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    tipo_piel VARCHAR(50)
+);
+
+CREATE TABLE productos (
+    id SERIAL PRIMARY KEY,
+    categoria_id INT REFERENCES categorias(id),
+    nombre VARCHAR(100) NOT NULL,
+    marca VARCHAR(100),
+    descripcion TEXT,
+    ingredientes TEXT,
+    precio DECIMAL(10,2),
+    activo BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE rutinas (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    tipo_piel VARCHAR(50),
+    momento VARCHAR(50),
+    descripcion TEXT
+);
+
+CREATE TABLE rutina_productos (
+    id SERIAL PRIMARY KEY,
+    rutina_id INT REFERENCES rutinas(id),
+    producto_id INT REFERENCES productos(id),
+    orden INT,
+    instrucciones TEXT
+);
+
+CREATE TABLE usuarios (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password VARCHAR(200),
+    rol VARCHAR(20) -- valores: 'USER' o 'ADMIN'
+);
+```
+
