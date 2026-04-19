@@ -1,3 +1,9 @@
 # Verificar instalación de Java y Maven
-'java -version
+` ` `CMD
+
+
+java -version
 mvn -v'
+
+
+` ` `
