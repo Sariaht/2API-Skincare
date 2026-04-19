@@ -138,4 +138,37 @@ public class Categoria {
     private String tipoPiel;
 }
 ```
+  - Repository
+```markdown
+> Java
+public interface CategoriaRepository extends JpaRepository<Categoria, Long> {}
+```
+  - Service
+```markdown
+> Java
+@Service
+public class CategoriaService {
+    @Autowired
+    private CategoriaRepository repo;
 
+    public List<Categoria> listar() { return repo.findAll(); }
+    public Categoria crear(Categoria c) { return repo.save(c); }
+    public Categoria actualizar(Long id, Categoria c) { c.setId(id); return repo.save(c); }
+    public void eliminar(Long id) { repo.deleteById(id); }
+}
+```
+  - Controller
+```markdown
+> Java
+@RestController
+@RequestMapping("/api/categorias")
+public class CategoriaController {
+    @Autowired
+    private CategoriaService service;
+
+    @GetMapping public List<Categoria> listar() { return service.listar(); }
+    @PostMapping @PreAuthorize("hasRole('ADMIN')") public Categoria crear(@RequestBody Categoria c) { return service.crear(c); }
+    @PutMapping("/{id}") @PreAuthorize("hasRole('ADMIN')") public Categoria actualizar(@PathVariable Long id, @RequestBody Categoria c) { return service.actualizar(id, c); }
+    @DeleteMapping("/{id}") @PreAuthorize("hasRole('ADMIN')") public void eliminar(@PathVariable Long id) { service.eliminar(id); }
+}
+```
