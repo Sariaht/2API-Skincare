@@ -6,6 +6,7 @@
 Esta aplicación es una solución integral para la gestión de inventarios de productos de cuidado personal (Skincare). Permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre un catálogo de productos, integrando un backend robusto en Spring Boot con una base de datos PostgreSQL hospedada en Google Cloud.
 
 -👥 Integrantes y Responsabilidades:
+
 --Sary Ariza Vargas: Configuración de infraestructura en Google Cloud (Cloud SQL, Cloud Run, Artifact Registry), implementación de seguridad en variables de entorno y desarrollo de endpoints en el Backend.
 
 --Adriana Carreño: Diseño y desarrollo de la interfaz de usuario (Frontend), integración de servicios API mediante JavaScript/Fetch y elaboración de la documentación técnica del sistema.
