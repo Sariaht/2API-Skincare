@@ -9,7 +9,7 @@ Esta aplicación es una solución integral para la gestión de inventarios de pr
 
 * **Sary Ariza Vargas**: Configuración de infraestructura en Google Cloud (Cloud SQL, Cloud Run, Artifact Registry), implementación de seguridad en variables de entorno y desarrollo de endpoints en el Backend.
 
-- Adriana Carreño: Diseño y desarrollo de la interfaz de usuario (Frontend), integración de servicios API mediante JavaScript/Fetch y elaboración de la documentación técnica del sistema.
+- **Adriana Carreño**: Diseño y desarrollo de la interfaz de usuario (Frontend), integración de servicios API mediante JavaScript/Fetch y elaboración de la documentación técnica del sistema.
 
 ### 🛠️ Stack Tecnológico 
 - Backend: Java 17, Spring Boot, Spring Data JPA.
