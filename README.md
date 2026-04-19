@@ -103,4 +103,15 @@ CREATE TABLE usuarios (
     rol VARCHAR(20) -- valores: 'USER' o 'ADMIN'
 );
 ```
-
+### Configuración de conexión a PostgreSQL
+Se debe configurar la conexión con la base de datos con usuario y contraseña en src/main/resources/application.properties:
+```markdown
+> Java
+spring.datasource.url=jdbc:postgresql://localhost:5432/skincare_db
+spring.datasource.username=postgres
+spring.datasource.password=<TU_CONTRASEÑA>
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.security.user.name=admin
+spring.security.user.password=admin123
+```
