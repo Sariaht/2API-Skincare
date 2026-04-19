@@ -1,7 +1,7 @@
 # Verificar instalación de Java y Maven
 **CMD**
 ```markdown
-> **💻 Terminal / CMD**
+> 💻 CMD**
 java -version
 mvn -v
 ```
