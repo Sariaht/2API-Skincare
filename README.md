@@ -15,5 +15,7 @@ Configura:
 - Dependencias: Spring Web, Spring Data JPA, PostgreSQL Driver
 - Haz clic en GENERATE, se descargará un .zip
 - Extrae el contenido en tu carpeta de trabajo
-- Abre esa carpeta en Visual Studio Code.
 
+## 
+
+<img width="440" height="461" alt="image" src="https://github.com/user-attachments/assets/4ac848b3-7cba-4c1a-a971-478c71007df8" />
