@@ -54,7 +54,7 @@ Dirígete a visual studio code, y abre la carpeta maven que fue generada encontr
 
 ### Preparar entorno PostgreSQL
 - **Crear base de datos**:
-- ```markdown
+```markdown
 > Consola PostgreSQL
 CREATE DATABASE skincare_db;
 ```
