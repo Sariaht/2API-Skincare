@@ -122,55 +122,139 @@ En la ruta src\main\java\com\skincare\skincare_app se deben crear las cuatro car
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/391472cc-7ef1-4e8b-937e-34599749a4b6" />
 
 
-- **Modelo para cada una de las tablas**
+- **Modelo para cada una de las tablas ejemplo categorías**
   
   - Model
 ```markdown
 > Java  
+package com.skincare.skincare_app.Model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 @Entity
 @Table(name = "categorias")
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
     private String descripcion;
     private String tipoPiel;
+
+    // Getters y Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public String getDescripcion() { return descripcion; }
+    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
+
+    public String getTipoPiel() { return tipoPiel; }
+    public void setTipoPiel(String tipoPiel) { this.tipoPiel = tipoPiel; }
 }
 ```
   - Repository
 ```markdown
 > Java
-public interface CategoriaRepository extends JpaRepository<Categoria, Long> {}
+package com.skincare.skincare_app.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.skincare.skincare_app.Model.Categoria;
+
+@Repository
+public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
+}
 ```
   - Service
 ```markdown
 > Java
+package com.skincare.skincare_app.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+import com.skincare.skincare_app.Model.Categoria;
+import com.skincare.skincare_app.Repository.CategoriaRepository;
+
 @Service
 public class CategoriaService {
+
     @Autowired
     private CategoriaRepository repo;
 
-    public List<Categoria> listar() { return repo.findAll(); }
-    public Categoria crear(Categoria c) { return repo.save(c); }
-    public Categoria actualizar(Long id, Categoria c) { c.setId(id); return repo.save(c); }
-    public void eliminar(Long id) { repo.deleteById(id); }
+    public List<Categoria> listar() {
+        return repo.findAll();
+    }
+
+    public Categoria crear(Categoria c) {
+        return repo.save(c);
+    }
+
+    public Categoria actualizar(Long id, Categoria c) {
+        c.setId(id);
+        return repo.save(c);
+    }
+
+    public void eliminar(Long id) {
+        repo.deleteById(id);
+    }
 }
 ```
 
   - Controller
 ```markdown
 > Java
+package com.skincare.skincare_app.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.security.access.prepost.PreAuthorize;
+
+import java.util.List;
+
+import com.skincare.skincare_app.Model.Categoria;
+import com.skincare.skincare_app.Service.CategoriaService;
+
 @RestController
 @RequestMapping("/api/categorias")
 public class CategoriaController {
+
     @Autowired
     private CategoriaService service;
 
-    @GetMapping public List<Categoria> listar() { return service.listar(); }
-    @PostMapping @PreAuthorize("hasRole('ADMIN')") public Categoria crear(@RequestBody Categoria c) { return service.crear(c); }
-    @PutMapping("/{id}") @PreAuthorize("hasRole('ADMIN')") public Categoria actualizar(@PathVariable Long id, @RequestBody Categoria c) { return service.actualizar(id, c); }
-    @DeleteMapping("/{id}") @PreAuthorize("hasRole('ADMIN')") public void eliminar(@PathVariable Long id) { service.eliminar(id); }
+    @GetMapping
+    public List<Categoria> listar() {
+        return service.listar();
+    }
+
+    @PostMapping
+    @PreAuthorize("hasRole('ADMIN')")
+    public Categoria crear(@RequestBody Categoria c) {
+        return service.crear(c);
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public Categoria actualizar(@PathVariable Long id, @RequestBody Categoria c) {
+        return service.actualizar(id, c);
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public void eliminar(@PathVariable Long id) {
+        service.eliminar(id);
+    }
 }
 ```
 - **Configurar Spring Security**
