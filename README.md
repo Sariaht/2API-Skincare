@@ -157,6 +157,7 @@ public class CategoriaService {
     public void eliminar(Long id) { repo.deleteById(id); }
 }
 ```
+- **Configurar Spring Security**
   - Controller
 ```markdown
 > Java
@@ -170,5 +171,48 @@ public class CategoriaController {
     @PostMapping @PreAuthorize("hasRole('ADMIN')") public Categoria crear(@RequestBody Categoria c) { return service.crear(c); }
     @PutMapping("/{id}") @PreAuthorize("hasRole('ADMIN')") public Categoria actualizar(@PathVariable Long id, @RequestBody Categoria c) { return service.actualizar(id, c); }
     @DeleteMapping("/{id}") @PreAuthorize("hasRole('ADMIN')") public void eliminar(@PathVariable Long id) { service.eliminar(id); }
+}
+```
+
+```markdown
+> Java
+package com.skincare.skincare_app.config;
+
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.Customizer;
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf(csrf -> csrf.disable())
+            .authorizeHttpRequests(auth -> auth
+                // Solo ADMIN puede crear/editar/eliminar
+                .requestMatchers("/api/productos/**", "/api/categorias/**").hasRole("ADMIN")
+                // USER y ADMIN pueden consultar rutinas
+                .requestMatchers("/api/rutinas/**", "/api/rutina-productos/**").hasAnyRole("USER","ADMIN")
+                // Endpoints públicos
+                .requestMatchers("/auth/**", "/hello").permitAll()
+                // cualquier otra ruta requiere autenticación
+                .anyRequest().authenticated()
+            )
+            // Aquí va el cambio: usar Customizer
+            .httpBasic(Customizer.withDefaults());
+
+        return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }
 ```
