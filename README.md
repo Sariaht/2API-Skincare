@@ -16,6 +16,6 @@ Configura:
 - Haz clic en GENERATE, se descargará un .zip
 - Extrae el contenido en tu carpeta de trabajo
 
-## 
-
-<img width="440" height="461" alt="image" src="https://github.com/user-attachments/assets/4ac848b3-7cba-4c1a-a971-478c71007df8" />
+## Abrir tu proyecto
+Dirígete a visual studio code, y abre la carpeta maven que fue generada encontrarás diferentes archivos como se muestra a continuación
+<img width="300" height="361" alt="image" src="https://github.com/user-attachments/assets/4ac848b3-7cba-4c1a-a971-478c71007df8" />
