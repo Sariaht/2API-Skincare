@@ -1,6 +1,6 @@
 # API SKINCARE
 
-##🌿 API de Skincare - Gestión de Productos Cloud Proyecto de Desarrollo de Aplicaciones en la Nube
+### 🌿 API de Skincare - Gestión de Productos Cloud Proyecto de Desarrollo de Aplicaciones en la Nube
 
 - 📝 Descripción del Proyecto:
 Esta aplicación es una solución integral para la gestión de inventarios de productos de cuidado personal (Skincare). Permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre un catálogo de productos, integrando un backend robusto en Spring Boot con una base de datos PostgreSQL hospedada en Google Cloud.
