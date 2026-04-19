@@ -104,7 +104,7 @@ CREATE TABLE usuarios (
 );
 ```
 ### Configuración de conexión a PostgreSQL
-Se debe configurar la conexión con la base de datos con usuario y contraseña en src/main/resources/application.properties:
+Se debe configurar la conexión con la base de datos con usuario y contraseña en VS code en src/main/resources/application.properties:
 ```markdown
 > Java
 spring.datasource.url=jdbc:postgresql://localhost:5432/skincare_db
@@ -115,3 +115,23 @@ spring.jpa.show-sql=true
 spring.security.user.name=admin
 spring.security.user.password=admin123
 ```
+### Organización del proyecto
+En una aplicación bien organizada con Spring Boot, lo recomendable es que cada tabla importante tenga su propio modelo, repositorio, servicio y controlador. Esto se llama arquitectura en capas y te ayuda a mantener el código limpio y escalable.
+En la ruta src\main\java\com\skincare\skincare_app se deben crear las cuatro carpetas y dentro de ellas los archivos por cada tabla de la siguinete forma
+<img width="466" height="890" alt="image" src="https://github.com/user-attachments/assets/391472cc-7ef1-4e8b-937e-34599749a4b6" />
+- **Modelo para cada una de las tablas**
+- Model
+```markdown
+> Java  
+@Entity
+@Table(name = "categorias")
+public class Categoria {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String nombre;
+    private String descripcion;
+    private String tipoPiel;
+}
+```
+
