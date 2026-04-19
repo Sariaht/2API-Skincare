@@ -120,7 +120,8 @@ En una aplicación bien organizada con Spring Boot, lo recomendable es que cada 
 En la ruta src\main\java\com\skincare\skincare_app se deben crear las cuatro carpetas y dentro de ellas los archivos por cada tabla de la siguinete forma
 
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/391472cc-7ef1-4e8b-937e-34599749a4b6" />
-- **Modelo para cada una de las tablas**
+
+**Modelo para cada una de las tablas**
 - Model
 ```markdown
 > Java  
