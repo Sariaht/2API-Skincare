@@ -7,16 +7,16 @@ Esta aplicación es una solución integral para la gestión de inventarios de pr
 
 ### 👥 Integrantes y Responsabilidades:
 
-* **Sary Ariza Vargas**: Configuración de infraestructura en Google Cloud (Cloud SQL, Cloud Run, Artifact Registry), implementación de seguridad en variables de entorno y desarrollo de endpoints en el Backend.
+- **Sary Ariza Vargas**: Configuración de infraestructura en Google Cloud (Cloud SQL, Cloud Run, Artifact Registry), implementación de seguridad en variables de entorno y desarrollo de endpoints en el Backend.
 
 - **Adriana Carreño**: Diseño y desarrollo de la interfaz de usuario (Frontend), integración de servicios API mediante JavaScript/Fetch y elaboración de la documentación técnica del sistema.
 
 ### 🛠️ Stack Tecnológico 
-- Backend: Java 17, Spring Boot, Spring Data JPA.
-- Base de Datos: PostgreSQL (Google Cloud SQL).
-- Infraestructura: Google Cloud Platform (GCP).
-- CI/CD: Google Cloud Build (Despliegue automático).
-- Frontend: HTML5, CSS3, JavaScript Vanilla.
+- **Backend**: Java 17, Spring Boot, Spring Data JPA.
+- **Base de Datos**: PostgreSQL (Google Cloud SQL).
+- **Infraestructura**: Google Cloud Platform (GCP).
+- **CI/CD**: Google Cloud Build (Despliegue automático).
+- **Frontend**: HTML5, CSS3, JavaScript Vanilla.
 
 ☁️ Servicios Cloud Implementados Cloud Run: Hosting del contenedor de la API con escalabilidad automática.
 
