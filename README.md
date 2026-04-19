@@ -1,7 +1,5 @@
 # Verificar instalación de Java y Maven
-<details open>
-  <summary><b>Terminal / CMD</b></summary>
-  
+**Terminal / CMD**
 ```bash
 java -version
 mvn -v
