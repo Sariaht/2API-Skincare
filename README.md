@@ -157,7 +157,7 @@ public class CategoriaService {
     public void eliminar(Long id) { repo.deleteById(id); }
 }
 ```
-- **Configurar Spring Security**
+
   - Controller
 ```markdown
 > Java
@@ -173,7 +173,7 @@ public class CategoriaController {
     @DeleteMapping("/{id}") @PreAuthorize("hasRole('ADMIN')") public void eliminar(@PathVariable Long id) { service.eliminar(id); }
 }
 ```
-
+- **Configurar Spring Security**
 ```markdown
 > Java
 package com.skincare.skincare_app.config;
