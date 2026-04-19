@@ -1,1 +1,3 @@
-# 2API-Skincare
+# Verificar instalación de Java y Maven
+'java -version
+mvn -v'
