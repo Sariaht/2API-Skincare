@@ -121,8 +121,10 @@ En la ruta src\main\java\com\skincare\skincare_app se deben crear las cuatro car
 
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/391472cc-7ef1-4e8b-937e-34599749a4b6" />
 
+
 - **Modelo para cada una de las tablas**
- - Model
+  
+  - Model
 ```markdown
 > Java  
 @Entity
