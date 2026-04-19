@@ -57,9 +57,9 @@ Dirígete a visual studio code, y abre la carpeta maven que fue generada encontr
 - ```markdown
 > Consola PostgreSQL
 CREATE DATABASE skincare_db;
-> ```
+```
 - **Script tablas**:
-- ```markdown
+```markdown
 > Consola PostgreSQL
 CREATE TABLE categorias (
     id SERIAL PRIMARY KEY,
